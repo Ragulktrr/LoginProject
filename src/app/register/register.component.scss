@@ -1,0 +1,204 @@
+#container{
+    filter: saturate(3);
+}
+
+#container {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    display: table;
+}
+
+#center{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#components{
+    position: relative;
+    width: 700px;
+    padding: 1px 0px;
+    margin: 10px auto;
+    border-radius: 5px;
+    animation: fade-in 0.75s ease-in;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
+}
+
+@keyframes fade-in {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+#components:before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: 0px;
+    width: 100%;
+    height: 9px;
+    z-index: 0;
+    margin: 0px auto;
+    transform: scale(0.95);
+    -webkit-transform: scale(.95);
+    -ms-transform: scale(.95);
+    border-radius: 5px 5px 0px 0px;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+#close_btn{
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    min-width: auto;
+    padding: 0px 5px;
+    background-color: #cc0036;
+}
+
+#close_btn:hover {
+    animation: border-animate 1s infinite;
+}
+
+@keyframes border-animate {
+    0% {box-shadow: 0 0 0 #cc0036;}
+    100% {box-shadow: 0 0 40px #cc00364d;}
+}
+
+#clear_btn{
+    position: absolute;
+    top: 8px;
+    right: 50px;
+    min-width: auto;
+    padding: 0px 5px;
+    background-color: #0063cc;
+}
+
+#clear_btn:hover {
+    animation: border-animate-clear 1s infinite;
+}
+
+@keyframes border-animate-clear {
+    0% {box-shadow: 0 0 0 #0063cc;}
+    100% {box-shadow: 0 0 40px #0063cc2a;}
+}
+
+::ng-deep .arrow_class{
+    position: absolute;
+    color: #2835ed;
+    height: 55px;
+    top: calc(50% - 37px);
+    filter: saturate(3);
+}
+
+::ng-deep #backward_arrow_id,
+::ng-deep #backward_arrow_id_1{
+    position: absolute;
+    box-shadow: none;
+    padding-left: 25px;
+    left: calc(50% - 448px);
+}
+
+::ng-deep #backward_arrow_id{
+    z-index: 1;
+}
+
+::ng-deep #backward_arrow_id_1{
+    opacity: 0;
+}
+
+// ::ng-deep .shape-back{
+//     -webkit-clip-path: polygon(100% 0%, 100% 51%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+//     clip-path: polygon(100% 0%, 100% 51%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+// }
+
+// ::ng-deep #backward_arrow_id:hover ~ #backward_arrow_id_1{
+//     animation: animate 0.75s infinite;
+// }
+
+// @keyframes animate {
+//     0% {left: calc(50% - 448px); opacity: 1;}
+//     100% {left: calc(50% - 483px); opacity: 0;}
+// }
+
+#form_id{
+    padding-bottom: 10px;
+}
+
+mat-form-field {
+    width: 275px;
+    margin: 1px 0px 1px 50px;
+}
+
+:host ::ng-deep mat-form-field>div>div.mat-form-field-flex{
+    padding-top: 0px;
+}
+
+#register_lbl_div {
+    width: 100%;
+    margin: 5px 0px 5px 0px;
+    border-left: 4px solid #2835ed;
+}
+
+#register_lbl_header {
+    display: block;
+    color: #2835ed;
+    font-size: 1.7em;
+    font-weight: bold;
+    padding: 0px 45px;
+    font-family: Calibri;
+    margin: 8px 0px 8px 0px;
+}
+
+#picker_icon{
+    font-size: 28px;
+}
+
+.mat-datepicker-toggle{
+    color: black;
+}
+
+.mat-datepicker-toggle-active {
+    color: #3f51b5;
+}
+
+#register {
+    font-size: 1.2em;
+}
+
+#sign_in {
+    left: 25px;
+    font-size: 1.2em;
+}
+
+.button {
+    width: 105px;
+    height:40px;
+    font-family: Calibri;
+    transition: box-shadow 0.5s;
+}
+
+.button:hover {
+    opacity: 1;
+    transition: box-shadow 0.5s;
+    box-shadow: 0px 7px 5px #777;
+    background-color: #2835ed;
+}
+
+div#btn_div {
+    display: flex;
+    justify-content: center;
+}
+
+#save_id{
+    position: relative;
+    float: right;
+    top: 7px;
+}
+
+#back_id{
+    position: relative;
+    float: left;
+    top: 8px;
+}

@@ -1,0 +1,78 @@
+<div id="container">
+  <div id="center">
+    <div id="components">
+      <div id="register_lbl_div">
+        <mat-label id="register_lbl_header">REGISTER</mat-label>
+        <button id="clear_btn" mat-raised-button matTooltip="Clear" color="primary" matTooltipPosition="below" (click)="onClear()" >
+          <mat-icon id="clear_id">refresh</mat-icon>
+        </button>
+        <button id="close_btn" mat-raised-button  matTooltip="Close" color="primary" matTooltipPosition="below" routerLink="/login">
+          <mat-icon id="close_id">close</mat-icon>
+        </button>
+      </div>
+      <form id="form_id" [formGroup]="registerValidation">
+        <div id="align_div">
+          <mat-form-field id="emp_id_form" appearance="standard">
+            <mat-label>Employee ID</mat-label>
+            <input matInput formControlName="emp_id" [(ngModel)]="emp_id" />
+            <mat-hint >{{this.auto_gen ? '\"Employee Id\" will be auto generated' : '\"Check\" to auto generate'}}</mat-hint>
+            <mat-checkbox [checked]="auto_gen" color="accent" (change)="toggleVisibility($event)" matTooltip="Auto Generate" matTooltipPosition="above" matSuffix></mat-checkbox>
+          </mat-form-field>
+          <mat-form-field id="role_form" appearance="standard">
+            <mat-label>Role</mat-label>
+            <mat-select formControlName="role_control" >
+              <mat-option value="0">Member</mat-option>
+              <mat-option value="1">Team Lead</mat-option>
+              <mat-option value="2">Manager</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field id="name_form" appearance="standard">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="emp_name" />
+            <mat-icon matSuffix>perm_identity</mat-icon>
+          </mat-form-field>
+          <mat-form-field id="lead_form" appearance="standard">
+            <mat-label>Lead</mat-label>
+            <mat-select formControlName="lead_control" >
+              <mat-option *ngFor="let leadObj of leadOptions" [value]="leadObj">
+                {{leadObj}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field id="mail_id_form" appearance="standard">
+            <mat-label>Mail ID</mat-label>
+            <input matInput formControlName="emp_mail_id" />
+            <mat-icon matSuffix>mail</mat-icon>
+          </mat-form-field>
+          <mat-form-field id="manager_form" appearance="standard">
+            <mat-label>Manager</mat-label>
+            <mat-select formControlName="manager_control" >
+              <mat-option *ngFor="let manObj of managerOptions" [value]="manObj.key">
+                {{manObj.value}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Date of Joining</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="date_of_joining" >
+            <mat-datepicker-toggle matSuffix [for]="picker">
+                <mat-icon id="picker_icon"matDatepickerToggleIcon>calendar_today</mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field id="mobile_no_form" appearance="standard">
+            <mat-label>Mobile Number</mat-label>
+            <input type="number" matInput formControlName="emp_mobile_no" />
+            <mat-icon matSuffix>phone</mat-icon>
+          </mat-form-field>
+          <div id="btn_div">
+            <button id="register" mat-raised-button color="primary" class="button">
+              <strong>Save </strong>
+              <mat-icon id="save_id">save</mat-icon>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

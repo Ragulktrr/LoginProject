@@ -1,0 +1,175 @@
+.container_parent{
+    position: absolute;
+    top: 0px;
+    left:0px;
+    height: 100%;
+    width: 100%;
+    display: table;
+}
+
+#center {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#input_div {
+    position: relative;
+    width: 330px;
+    margin: 0 auto;
+    padding: 1px 0px;
+    border-radius: 5px;
+    animation: fade-in 0.75s ease-in;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
+}
+
+@keyframes fade-in {
+    from {opacity: 0;}
+    to   {opacity: 1;}
+}
+
+#input_div:before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: 0px;
+    width: 100%;
+    height: 9px;
+    z-index: 0;
+    transform: scale(0.95);
+    -webkit-transform: scale(.95);
+    -ms-transform: scale(.95);
+    border-radius: 5px 5px 0px 0px;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+#forward_arrow_id{
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    min-width: auto;
+    box-shadow: none;
+    padding: 0px 5px;
+    filter: saturate(3);
+    background-color: #cc0036;
+}
+
+#forward_arrow_id:hover {
+    animation: border-animate 1s infinite;
+}
+
+@keyframes border-animate {
+    0% {box-shadow: 0 0 0 #cc0036;}
+    100% {box-shadow: 0 0 40px #cc00364d;}
+}
+
+.animateLeft{
+    animation: fade-out 1s;
+}
+
+@keyframes fade-out {
+    0% {left: 0px; opacity: 1;}
+    100% {left: -200px; opacity: 0;}
+}
+
+::ng-deep #forward_arrow_id{
+    z-index: 1;
+}
+
+/*animation for arrow button on hover*/
+// ::ng-deep  .shape{
+//     -webkit-clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 0 48%, 0% 0%);
+//     clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 0 48%, 0% 0%);
+// }
+
+// ::ng-deep #forward_arrow_id:hover ~ #forward_arrow_id_1{
+//     animation: animate 0.75s infinite;
+// }
+
+// @keyframes animate {
+//     0% {left: calc(50% + 208px); opacity: 1;}
+//     100% {left: calc(50% + 241px); opacity: 0;}
+// }
+
+#align_div{
+    width: 250px;
+    margin: 1px 40px;
+}
+
+#center div :not(#login_logo) {
+    //filter: saturate(3);
+}
+
+#login_text {
+    display: block;
+    padding: 0px 33px;
+    color: #2835ed;
+    font-size: 1.7em;
+    font-family: Calibri;
+    font-weight: bold;
+    margin: 8px 0px 8px 0px;
+}
+
+#login_lbl_div {
+    margin: 5px 0px 5px 0px;
+    width: 100%;
+    border-left: 4px solid #2835ed;
+}
+
+mat-form-field {
+    margin: 5px 0px 5px 0px;
+    display: block;
+}
+
+#login_btn_div {
+	margin: 5px 0px 10px 0px;
+	display: block;
+	text-align: center;
+}
+
+.button {
+    width: 90px;
+    height:40px;
+    box-shadow: none;
+    transition: box-shadow 0.5s;
+}
+
+.button:hover {
+    opacity: 1;
+    transition: box-shadow 0.5s;
+    box-shadow: 0px 7px 5px #777;
+    background-color: #2835ed;
+}
+
+#btn_register{
+    position: absolute;
+    top: -30px;
+    right: -80px;
+    min-width: 85px !important;
+    height: 85px;
+    border-radius: 50%;
+    -webkit-filter: saturate(3);
+    filter: saturate(3);
+}
+
+#btn_register:hover {
+    opacity: 1;
+    background-color: #2835ed;
+}
+
+#login_logo {
+	border-radius: 100px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+    filter: saturate(-3);
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position: center;
+    width: 130px;
+    height: 130px;
+}
+
+.add-icon{
+    font-size: 32px;
+}
